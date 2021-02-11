@@ -20,8 +20,8 @@ class Challenges
 
         /* kick off tricksy challenges */
 
-        // $tricksy = new Tricksy();
-        // $tricksy->start();
+        $tricksy = new Tricksy();
+        $tricksy->start();
     }
 
     public function howdy()
