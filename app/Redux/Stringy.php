@@ -6,30 +6,30 @@ class Stringy{
 
     private $str;
 
-    public function __construct($str)
+    public function __construct(string $str)
     {
         $this->str = $str;
     }
 
-    public function lower()
+    public function lower() : Stringy
     {
         $this->str = strtolower($this->str);
         return $this;
     }
 
-    public function upper()
+    public function upper() : Stringy
     {
         $this->str = strtoupper($this->str);
         return $this;
     }
 
-    public function repeat($num)
+    public function repeat(int $num) : Stringy
     {
         $this->str = str_repeat($this->str, $num);
         return $this;
     }
 
-    public function append($append)
+    public function append(string $append) : Stringy
     {
         $this->str = $this->str . $append;
         return $this;
