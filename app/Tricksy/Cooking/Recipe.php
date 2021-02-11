@@ -9,16 +9,14 @@ class Recipe
     private $method;
     private $dietary = [];
 
-    public function __constructor($title)
+    public function __construct($title)
     {
         $this->title = $title;
     }
 
     public function addIngredient($ingredient, $quantity)
     {
-        dump($this->ingredients);
-        $this->ingredients . " - {$quantity} {$ingredient->getName()}\n";
-        dump($this->ingredients);
+        $this->ingredients .= " - {$quantity} {$ingredient->getName()}\n\t";
         $this->dietary = array_merge($this->dietary, $ingredient->getDietary());
     }
 
@@ -30,7 +28,7 @@ class Recipe
     public function display()
     {
         return 
-        "{$this->title}\n
+        "\t{$this->title}\n
         Ingredients\n
         {$this->ingredients}\n
         Method\n
@@ -47,5 +45,10 @@ class Recipe
     public function vegan()
     {
         return !in_array("animal produce", $this->dietary);
+    }
+
+    public function __toString()
+    {
+        return "To see the full reciepe, use display() method";
     }
 }

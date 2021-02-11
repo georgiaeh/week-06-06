@@ -24,6 +24,7 @@ class Challenges
         $eggs = new Cooking\Ingredient("Eggs", ["animal produce"]);
         $sugar = new Cooking\Ingredient("Sugar", []);
         $butter = new Cooking\Ingredient("Butter", ["dairy", "animal produce"]);
+        $coco = new Cooking\Ingredient("Coco Powder", []);
 
         // a recipe takes a name
         $cake = new Cooking\Recipe("Cake");
@@ -34,6 +35,7 @@ class Challenges
         $cake->addIngredient($butter, "100g");
         $cake->addIngredient($sugar, "50g");
         $cake->addIngredient($eggs, "2");
+        $cake->addIngredient($coco, "50g");
 
         // we can add a method
         $cake->addMethod("Put them in a bowl, mix them together, cook for a bit. Job's a good'un");
@@ -60,6 +62,8 @@ class Challenges
 
         // is the recipe vegan? (i.e. contains animal produce)
         dump($cake->vegan()); // false
+
+        dump($cake . " Pop Pop!");
     }
 
     public function superString()
